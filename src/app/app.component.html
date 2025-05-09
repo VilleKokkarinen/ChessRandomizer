@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
+        <button class="btn btn-success" (click)="GiveRandomPiece()"> RANDOM </button>
+        <button class="btn btn-info" (click)="ChangePlayerColor()"> C ({{Player_Color.toUpperCase()}}) </button>
+        <button class="btn btn-danger" (click)="Reset()"> RESET </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
+        <img src="assets/{{CurrentPiece}}.png" alt="" class="img-fluid" style="width: 200px; height: 200px;"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
+        <img *ngFor="let piece of DisableablePieces" (click)="DisablePiece(piece)" src="assets/{{Player_Color+piece}}.png" alt="" class="img-fluid" style="width: 50px; height: 50px; margin-left:5px;margin-right:5px;"/>
+    </div>
+</div>
